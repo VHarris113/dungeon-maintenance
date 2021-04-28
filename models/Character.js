@@ -17,17 +17,9 @@ Character.init(
         },
         race: {
             type: DataTypes.STRING,
-            references: {
-                model: 'chosen',
-                key: 'race',
-              },
         },
         class: {
             type: DataTypes.STRING,
-            references: {
-                model: 'chosen',
-                key: 'class',
-              },
         },
         description: {
             type: DataTypes.STRING,

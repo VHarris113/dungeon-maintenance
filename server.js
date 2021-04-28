@@ -7,6 +7,8 @@ const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+// This is the line that will inject the tables directly to your database
+const models = require('./models');
 
 const hbs = exphbs.create({ helpers });
 
