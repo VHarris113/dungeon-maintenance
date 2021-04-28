@@ -1,0 +1,47 @@
+[ 
+    {
+        "race": "Dragonborn",
+        "class": "Barbarian"
+    },
+    {
+        "race": "Dwarf",
+        "class": "Bard"
+    },
+    {
+        "race": "Elf",
+        "class": "Cleric"
+    },
+    {
+        "race": "Gnome",
+        "class": "Druid"
+    },
+    {
+        "race": "Half-Elf",
+        "class": "Fighter"
+    },
+    {
+        "race": "Halfling",
+        "class": "Monk"
+    },
+    {
+        "race": "Half-Orc",
+        "class": "Paladin"
+    },
+    {
+        "race": "Human",
+        "class": "Ranger"
+    },
+    {
+        "race": "Tiefling",
+        "class": "Rogue"
+    },
+    {
+        "class": "Sorcerer"
+    },
+    {
+        "class": "Warlock"
+    },
+    {
+        "class": "Wizard"
+    }
+]
