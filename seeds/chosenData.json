@@ -1,11 +1,19 @@
 [ 
     {
-        "race": "Dragonborn",
+        "race": "",
         "class": "Barbarian"
     },
     {
-        "race": "Dwarf",
+        "race": "Dragonborn", 
+        "class": ""
+    },
+    {
+        "race": "",
         "class": "Bard"
+    },
+    {
+        "race": "Dwarf",
+        "class": ""
     },
     {
         "race": "Elf",

@@ -1,24 +1,24 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
 
-class Chosen extends Model {}
+// class Chosen extends Model {}
 
-Chosen.init (
-    {
-        race: {
-            type: DataTypes.STRING
-        },
-        class: {
-            type: DataTypes.STRING 
-        },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'chosen',
-      }
-);
+// Chosen.init (
+//     {
+//         race: {
+//             type: DataTypes.STRING
+//         },
+//         class: {
+//             type: DataTypes.STRING 
+//         },
+//     },
+//     {
+//         sequelize,
+//         timestamps: false,
+//         freezeTableName: true,
+//         underscored: true,
+//         modelName: 'chosen',
+//       }
+// );
 
-module.exports = Chosen;
+// module.exports = Chosen;
