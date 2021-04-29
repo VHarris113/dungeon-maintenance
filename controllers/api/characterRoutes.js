@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Character } = require('../../models');
+const { Character, User } = require('../../models');
 
 //create a character
-router.post('/character-creation', withAuth, async (req, res) => {
+router.post('/create', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
            ...req.body,
@@ -15,6 +15,7 @@ router.post('/character-creation', withAuth, async (req, res) => {
     }
 });
 
+//delete a character
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const characterData = await Character.destroy({
@@ -34,7 +35,30 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-//router to choose all characters
+
+  //find all characters by user id
+router.get('/:id', withAuth, async (req, res) => {
+    try {
+        const characterData = await Character.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: id,
+                },
+            ],
+        });
+        
+        const userCharacter = characterData.get({ plain: true});
+        console.log(userCharacter);
+        res.render('character-selection', {
+            ...userCharacter});
+
+    } catch (err) {
+        res.status(404)
+        alert("You have no characters to display!")
+        .then(res.redirect('/create'));
+    }
+})
+//router to view all characters
 //router to choose one character
-//router to delete character
 //router to edit character
