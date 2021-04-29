@@ -1,8 +1,40 @@
 const router = require('express').Router();
 const { Character } = require('../../models');
 
+//create a character
+router.post('/character-creation', withAuth, async (req, res) => {
+    try {
+        const newCharacter = await Character.create({
+           ...req.body,
+           user_id: req.session.user_id, 
+        });
+
+        res.status(200).json(newCharacter);
+    } catch(err) {
+        res.status(400).json(err);
+    }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const characterData = await Character.destroy({
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      });
+  
+      if (!characterData) {
+        res.status(404).json({ message: 'No character found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(characterData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 //router to choose all characters
 //router to choose one character
-//router to create character
 //router to delete character
 //router to edit character
