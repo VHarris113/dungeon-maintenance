@@ -3,18 +3,19 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 // const helpers = require('./utils/helpers');
+const auth = require('./utils/auth');
+
 const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const models = require('./models');
 // const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 // This is the line that will inject the tables directly to your database
 const models = require('./models');
 
-const hbs = exphbs.create({ helpers });
 
 
 app.engine('handlebars', hbs.engine);

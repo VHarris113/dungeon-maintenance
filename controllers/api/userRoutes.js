@@ -5,3 +5,4 @@ const { User } = require('../../models');
 //login
 //logout
 //homepage
+//character-selection.handlebars
