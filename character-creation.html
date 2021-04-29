@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/creation.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -13,90 +14,102 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
   </head>
-  <body>
-    <div>
-      <nav>
-        <h1>DUNGEON MAINTENANCE</h1>
-        <div>
-          <button>Characters</button>
-          <button>Log out</button>
+  <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Dungeon Maintenance</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign Out</a>
+          </li>
+        </ul>
         </div>
-      </nav>
-    </div>
-    <div>
-      <header>
-        <h1>Build your Character</h1>
-      </header>
-    </div>
-
-    <div>
-      <h2>Name</h2>
-      <input type="name" />
-      <button>Randomize</button>
-    </div>
-    <div>
-      <h2>Description</h2>
-      <input type="Description" />
-      <button>Randomize</button>
-    </div>
-
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Class
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Barbarian</a>
-        <a class="dropdown-item" href="#">Bard</a>
-        <a class="dropdown-item" href="#">Cleric</a>
-        <a class="dropdown-item" href="#">Druid</a>
-        <a class="dropdown-item" href="#">Monk</a>
-        <a class="dropdown-item" href="#">Fighter</a>
-        <a class="dropdown-item" href="#">Monk</a>
-        <a class="dropdown-item" href="#">Paladin</a>
-        <a class="dropdown-item" href="#">Ranger</a>
-        <a class="dropdown-item" href="#">Rogue</a>
-        <a class="dropdown-item" href="#">Sorcerer</a>
-        <a class="dropdown-item" href="#">Warlock</a>
-        <a class="dropdown-item" href="#">Wizard</a>
-        <a class="dropdown-item" href="#">Artificer</a>
       </div>
-    </div>
+    </nav>
+    <div id="content-container">
+          <header>
+            <h1>Build your Character</h1>
+          </header>
 
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Race
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Dragonborn</a>
-        <a class="dropdown-item" href="#">Dwarf</a>
-        <a class="dropdown-item" href="#">Elf</a>
-        <a class="dropdown-item" href="#">Gnome</a>
-        <a class="dropdown-item" href="#">Half-Elf</a>
-        <a class="dropdown-item" href="#">Halfling</a>
-        <a class="dropdown-item" href="#">Half-Orc</a>
-        <a class="dropdown-item" href="#">Human</a>
-        <a class="dropdown-item" href="#">Thotfling</a>
 
-      </div>
-    </div>
+        <div class="input">
+          <h2>Name</h2>
+          <input type="name" />
+          <button>Randomize</button>
+        </div>
+        <div class="description">
+          <h2>Description</h2>
+          <input type="Description" />
+          <button>Randomize</button>
+        </div>
+        <div class="dropdown-flex">
+          <div class="dropdown" id="class-styling">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Class
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Barbarian</a>
+              <a class="dropdown-item" href="#">Bard</a>
+              <a class="dropdown-item" href="#">Cleric</a>
+              <a class="dropdown-item" href="#">Druid</a>
+              <a class="dropdown-item" href="#">Monk</a>
+              <a class="dropdown-item" href="#">Fighter</a>
+              <a class="dropdown-item" href="#">Monk</a>
+              <a class="dropdown-item" href="#">Paladin</a>
+              <a class="dropdown-item" href="#">Ranger</a>
+              <a class="dropdown-item" href="#">Rogue</a>
+              <a class="dropdown-item" href="#">Sorcerer</a>
+              <a class="dropdown-item" href="#">Warlock</a>
+              <a class="dropdown-item" href="#">Wizard</a>
+              <a class="dropdown-item" href="#">Artificer</a>
+            </div>
+          </div>
 
-    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-        Create Character
-      </button>
+          <div class="dropdown" id="race-styling">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Race
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Dragonborn</a>
+              <a class="dropdown-item" href="#">Dwarf</a>
+              <a class="dropdown-item" href="#">Elf</a>
+              <a class="dropdown-item" href="#">Gnome</a>
+              <a class="dropdown-item" href="#">Half-Elf</a>
+              <a class="dropdown-item" href="#">Halfling</a>
+              <a class="dropdown-item" href="#">Half-Orc</a>
+              <a class="dropdown-item" href="#">Human</a>
+              <a class="dropdown-item" href="#">Thotfling</a>
+
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+            Create Character
+          </button>
+      </div>    
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
