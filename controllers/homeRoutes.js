@@ -57,28 +57,6 @@ router.get('/login', (req, res) => {
 //router to character-creation.handlebars
 
 // this is for the file upload section - move to character create when done
-router.post('/', (req, res) => {
-    let sampleFile;
-    let uploadPath;
 
-    if (!req.file || Object.keys(req.files).length === 0) {
-        return res.status(400).send('No files uploaded.');
-    }
-    //name of input is sampleFile
-    sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/upload/' + sampleFile.name
-    console.log(sampleFile);
-
-    //use mv to put file on server
-
-    sampleFile.mv(uploadPath, function (err) {
-        if (err) return res.status(500).send(err);
-
-        res.send('File uploaded!');
-
-    });
-
-
-});
 
 module.exports = router;

@@ -18,7 +18,7 @@ const hbs = exphbs.create({});
 const models = require('./models');
 
 // default option
-app.use(fileUpload());
+
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -28,6 +28,35 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+app.use(fileUpload());
+
+app.post('/upload', (req, res) => {
+    let sampleFile;
+    let uploadPath;
+console.log(req.files.cat)
+    if (!req.files || Object.keys(req.files).length === 0) {
+        console.log("not right")
+        return res.status(400).send('No files uploaded.');
+    }
+    //name of input is sampleFile
+    sampleFile = req.files.cat;
+
+    uploadPath = __dirname + '/upload/' + sampleFile.name
+    console.log(sampleFile);
+
+    //use mv to put file on server
+
+    sampleFile.mv(uploadPath, function (err) {
+        if (err) {return res.status(500).send(err);}
+
+        res.send('File uploaded to ' +uploadPath);
+
+    });
+
+
+});
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
