@@ -23,13 +23,16 @@
 }
 
 #class-styling {
-padding-right: 80px;
+display: flex;
+justify-content: flex-start;
 }
 
 #race-styling {
-padding-left: 80px;
+display: flex;
+justify-content: flex-end;
 }
 
+#creation-btn {}
 
 .input-container {
 background-color: #ba3f1d;
@@ -39,3 +42,4 @@ padding: 50px;
 .description textarea {
 
 }
+
