@@ -18,28 +18,16 @@
 }
 
 .dropdown-flex {
-    display: flex;
+display: flex;
 
 }
 
 #class-styling {
-display: flex;
-justify-content: flex-start;
+width: 57%;
 }
-
-#race-styling {
-display: flex;
-justify-content: flex-end;
-}
-
-#creation-btn {}
 
 .input-container {
 background-color: #ba3f1d;
 padding: 50px;
-}
-
-.description textarea {
-
 }
 
