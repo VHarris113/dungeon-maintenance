@@ -1,6 +1,6 @@
 <div>
     <section>
-        <img src="Dunmain.jpg" alt="Dunmain" />
+        <img src="../Dunmain.jpg" alt="Dunmain" style="width-200px"; />
         <h1>WELCOME TO DUNGEON MAINTENANCE</h1>
         <h2>ABOUT SECTION</h2>
         <h2>HOW TO SECTION</h2>
@@ -19,7 +19,7 @@
         <h3>PASSWORD</h3>
         <input type="password" />
         <div>
-            <button>SUBMIT</button>
+            <button class="login-form">SUBMIT</button>
         </div>
         <!-- This is the sign up link we cant get to work yet! -->
         <h3>Don't have an account? <href>Sign up here!</href>
@@ -27,18 +27,36 @@
     </article>
 </div>
 
+<form class="signup-form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" id="name-signup" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Email</label>
+    <input type="email" id="email-signup" />
+  </div>
+  <div class="form-group form-check">
+      <label class="form-check-label" for="exampleCheck1">Password</label>
+        <input type="password" id="password-signup" />
+    </div>
+  <button type="button" id="signup-form" class="btn btn-primary">Submit</button>
+</form>
 <!-- This is the sign up section. -->
-<div>
+{{!-- <div>
     <article>
         <h2>SIGN UP</h2>
+        <h3>NAME</h3>
+        <input type="text" id="name-signup" />
         <h3>EMAIL</h3>
-        <input type="EMAIL" />
+        <input type="email" id="email-signup" />
         <h3>PASSWORD</h3>
-        <input type="password" />
+        <input type="password" id="password-signup" />
         <div>
-            <button>SUBMIT</button>
+            <button class="signup-form">SUBMIT</button>
         </div>
 
     </article>
-</div>
+</div> --}}
 {{/if}}
+<script src="./js/login.js"></script>
