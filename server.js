@@ -15,7 +15,8 @@ const models = require('./models');
 const models = require('./models');
 
 const hbs = exphbs.create({ helpers });
-
+const initRoutes = require('./controllers/api/web');
+global.__basedir = __dirname
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+initRoutes(app);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
