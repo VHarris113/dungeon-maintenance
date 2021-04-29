@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 // const helpers = require('./utils/helpers');
 const auth = require('./utils/auth');
+const fileUpload = require('express-fileupload');
 
 const sequelize = require('./config/connection');
 
@@ -16,7 +17,8 @@ const hbs = exphbs.create({});
 // This is the line that will inject the tables directly to your database
 const models = require('./models');
 
-
+// default option
+app.use(fileUpload());
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
