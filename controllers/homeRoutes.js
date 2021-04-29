@@ -23,9 +23,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/my-characters', async (req, res) => {
+router.get('/character-selection', async (req, res) => {
     try {
-        res.render('my-characters', {
+        res.render('character-selection', {
             characters: req.session.characters
         });
     } catch (err) {
@@ -34,5 +34,17 @@ router.get('/my-characters', async (req, res) => {
 });
 
 //router to login/sign up
+router.get('/login', (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.redirect('/character-selection')
+        } else {
+            res.redirect('/login')
+        }
+        res.render('character-selection');
 
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 //router to profile/character collection
