@@ -23,18 +23,19 @@
 }
 
 #class-styling {
-    padding-right: 420px;
-    padding-top: 150px;
-    padding-bottom: 50px;
+padding-right: 80px;
 }
 
 #race-styling {
-    padding-top: 150px;
-    padding-bottom: 50px;
+padding-left: 80px;
 }
 
 
-.description input {
+.input-container {
+background-color: #ba3f1d;
+padding: 50px;
+}
 
-    padding-bottom: px;
+.description textarea {
+
 }
