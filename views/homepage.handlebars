@@ -6,3 +6,37 @@
           <h2>HOW TO SECTION</h2>
         </section>
  </div>
+
+ <!-- This is the login section. (Had to put a div in to separate the submit button) -->
+{{#if logged_in}}
+<div>
+    <article>
+        <h2>LOG IN</h2>
+        <h3>EMAIL</h3>
+        <input type="EMAIL" />
+        <h3>PASSWORD</h3>
+        <input type="password" />
+        <div>
+            <button>SUBMIT</button>
+        </div>
+        <!-- This is the sign up link we cant get to work yet! -->
+        <h3>Don't have an account? <href>Sign up here!</href>
+        </h3>
+    </article>
+</div>
+
+<!-- This is the sign up section. -->
+<div>
+    <article>
+        <h2>SIGN UP</h2>
+        <h3>EMAIL</h3>
+        <input type="EMAIL" />
+        <h3>PASSWORD</h3>
+        <input type="password" />
+        <div>
+            <button>SUBMIT</button>
+        </div>
+
+    </article>
+</div>
+{{/if}}

@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Character, Chosen, User } = require('../models');
-const withAuth = require('.../utils/auth');
+const withAuth = require('../utils/auth');
 
 //router get at homepage for and render homepage
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
     try {
         res.render('homepage', {
             logged_in: req.session.logged_in
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
     try {
         res.render('homepage', {
             logged_out: req.session.logged_out

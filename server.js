@@ -8,16 +8,14 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const models = require('./models');
 // const hbs = exphbs.create({ helpers });
 
 // This is the line that will inject the tables directly to your database
 const models = require('./models');
 
-const hbs = exphbs.create({ helpers });
 
 
-app.engine('handlebars', hbs.engine);
+// app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
