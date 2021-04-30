@@ -14,7 +14,7 @@
     />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body class="body">
     <!-- This is the navbar. ((including login and sign up buttons)) -->
     <!-- <ul class="nav justify-content-end"> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,17 +28,17 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="#signup">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log in</a>
+            <a class="nav-link" href="#login">Log in</a>
           </li>
         </ul>
         </div>
       </div>
     </nav>
     <!-- </ul> -->
-    <main id="content-container">
+    <main>
       <!-- This is the main header where the logo and primary information will be held -->
       <div class="container">
         <section>
@@ -51,7 +51,7 @@
       <!-- This is the login section. (Had to put a div in to separate the submit button) -->
       <div class="box-container">
         <section class="single-box">
-          <h2>LOG IN</h2>
+          <h2 id="login">LOG IN</h2>
           <h3>EMAIL</h3>
           <input type="EMAIL" />
           <h3>PASSWORD</h3>
@@ -63,7 +63,7 @@
           <h4>Don't have an account? <href>Sign up here!</href></h4>
         </section>
         <section class="single-box">
-          <h2>SIGN UP</h2>
+          <h2 id="signup">SIGN UP</h2>
           <h3>EMAIL</h3>
           <input type="EMAIL" />
           <h3>PASSWORD</h3>
