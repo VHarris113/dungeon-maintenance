@@ -1,5 +1,13 @@
 const router = require('express').Router();
+
+const {
+    Character,
+    Chosen,
+    User
+} = require('../models');
+
 // const { Character, Chosen, User } = require('../models');
+
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -51,5 +59,8 @@ router.get('/login', (req, res) => {
 });
 
 //router to character-creation.handlebars
+
+// this is for the file upload section - move to character create when done
+
 
 module.exports = router;
