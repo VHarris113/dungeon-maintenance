@@ -1,0 +1,33 @@
+.body{
+    background-color: #a77e58;
+}
+
+#content-container {
+    position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5% 200px;
+    padding: 50px;
+    background-color:#d9cfc1;
+}
+
+.dropdown-flex {
+display: flex;
+
+}
+
+#class-styling {
+width: 57%;
+}
+
+.input-container {
+background-color: #ba3f1d;
+padding: 50px;
+}
+
