@@ -71,7 +71,7 @@ router.put('/:id', async (req, res) => {
             },
         });
         if (!characterData[0]) {
-            res.status(404).json({message: 'No character found with this id!'});
+            res.status(404).json({ message: 'No character found with this id!' });
             return;
         }
         res.status(200).json(characterData);
@@ -89,5 +89,9 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-    
+
 });
+
+
+//Addit'l Questions:
+//clarity on linking '/' etc. to views
