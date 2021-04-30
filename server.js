@@ -24,17 +24,21 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+    extended: false
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
 app.use(fileUpload());
+app.use(express.static('public'));
+app.use(express.static('upload'));
 
 app.post('/upload', (req, res) => {
     let sampleFile;
     let uploadPath;
-console.log(req.files.cat)
+    console.log(req.files.cat)
     if (!req.files || Object.keys(req.files).length === 0) {
         console.log("not right")
         return res.status(400).send('No files uploaded.');
@@ -48,9 +52,11 @@ console.log(req.files.cat)
     //use mv to put file on server
 
     sampleFile.mv(uploadPath, function (err) {
-        if (err) {return res.status(500).send(err);}
+        if (err) {
+            return res.status(500).send(err);
+        }
 
-        res.send('File uploaded to ' +uploadPath);
+        res.send('File uploaded to ' + uploadPath);
 
     });
 
@@ -58,7 +64,9 @@ console.log(req.files.cat)
 });
 
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({
+    force: false
+}).then(() => {
     app.listen(PORT, () => {
         console.log('The dungeon calls to us.')
     });
