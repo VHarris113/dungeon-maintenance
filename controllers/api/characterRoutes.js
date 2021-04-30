@@ -127,7 +127,7 @@ router.get('/:character_id', async (req, res) => {
 //     }
 // });
 
-// route for upload picture
+// route for upload picture --- in server file now
 // router.post('/', (req, res) => {
 //     let sampleFile;
 //     let uploadPath;
