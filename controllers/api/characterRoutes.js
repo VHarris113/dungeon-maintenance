@@ -79,4 +79,15 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-//router to choose one character
+
+//find all characters in db regardless of user
+router.get('/', async (req, res) => {
+    try {
+        const characters = await Character.findAll({});
+        console.log(characters);
+        res.json(characters)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+    
+});
