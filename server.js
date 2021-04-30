@@ -17,10 +17,10 @@ const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({});
 
 // This is the line that will inject the tables directly to your database
-const models = require('./modelss
+const models = require('./models');
 // default option
 
-=======
+
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
