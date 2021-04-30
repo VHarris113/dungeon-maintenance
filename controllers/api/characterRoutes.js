@@ -92,6 +92,3 @@ router.get('/', async (req, res) => {
 
 });
 
-
-//Addit'l Questions:
-//clarity on linking '/' etc. to views
