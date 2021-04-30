@@ -1,3 +1,29 @@
+
+ <div>
+        <section>
+          <img src="Dunmain.jpg" alt="Dunmain" />
+          <h1>WELCOME TO DUNGEON MAINTENANCE</h1>
+          <h2>ABOUT SECTION</h2>
+          <h2>HOW TO SECTION</h2>
+        </section>
+ </div>
+ {{!-- section for image upload, move when done --}}
+<div>
+    <form action='/upload' method='POST' enctype="multipart/form-data">
+    <h3>Upload File</h3>
+    <input type='file' name='cat' />
+    <input type="submit" class="btn btn-primary">
+
+</form>
+</div>
+</br>
+<div>
+    <img src='../public/img/default.jpg'>
+</div>
+
+{{!-- end section for image upload --}}
+ <!-- This is the login section. (Had to put a div in to separate the submit button) -->
+=======
 <div>
     <section>
         <img src="../Dunmain.jpg" alt="Dunmain" style="width-200px"; />
@@ -8,6 +34,7 @@
 </div>
 
 <!-- This is the login section. (Had to put a div in to separate the submit button) -->
+
 {{#if logged_in}}
 <div></div>
 {{else}}
