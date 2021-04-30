@@ -18,45 +18,65 @@ router.post('/create', async (req, res) => {
 
 
 //delete a character
-// router.delete('/:id', async (req, res) => {
-//     console.log(req.params.character_id)
-//     try {
-//         const characterData = await Character.destroy({
-//             where: {
-//                 id: req.params.character_id,
-//                 // user_id: req.session.user_id,
-//             },
-//         });
+router.delete('/:character_id', async (req, res) => {
+    console.log(req.params.character_id)
+    try {
+        const characterData = await Character.destroy({
+            where: {
+                character_id: req.params.character_id,
+                // user_id: req.session.user_id,
+            },
+        });
 
-//         if (!characterData) {
-//             res.status(404).json({ message: 'No character found with this id!' });
-//             return;
-//         }
+        if (!characterData) {
+            res.status(404).json({ message: 'No character found with this id!' });
+            return;
+        }
 
-//         res.status(200).json(characterData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        res.status(200).json(characterData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
 // //find all characters by user id 
-// router.get('/user/:id', async (req, res) => {
+router.get('/user/:user_id', async (req, res) => {
+    try {
+    const charData = await Character.findAll({
+            where: {
+                user_id: req.params.user_id
+            }
+    });
+    const something = charData.map(char => char.get({plain : true}));
+    console.log(something);
+    res.render('character-selection', {something});
+} catch (err) {
+    res.status(500).json(err);
+}
+    // console.log(req.params.user_id)
 //     try {
-//         const characterData = await Character.findAll(req.params.user_id);
+//         //const characterData = await Character.findByFk(req.params.user_id);
+// const characterData = await Character.findAll({
+//     attributes: ['name'],
+//     where: {
+//         user_id: req.params.user_id
+//     }
+// })
 
 //         const userCharacter = characterData.get({ plain: true });
 //         console.log(userCharacter);
-//         res.render('character-selection', {
-//             ...userCharacter
-//         });
+//         // res.render('character-selection', {
+//         //     ...userCharacter
+//         // });
+//         res(200).json(userCharacter)
 
 //     } catch (err) {
 //         res.status(404);
-//         res.send("You have no characters to display!")
-//             .then(res.redirect('/create'));
+//        // res.send("You have no characters to display!");
+//          //  res.redirect('/create');
 //     }
-// });
+});
 
 // //find all characters in db regardless of user
 router.get('/', async (req, res) => {
