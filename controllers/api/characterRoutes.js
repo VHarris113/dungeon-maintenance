@@ -37,8 +37,8 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 
-//find all characters by user id TODO: confirm that this finds by user id and not character id
-router.get('/:id', withAuth, async (req, res) => {
+//find all characters by user id 
+router.get('user/:id', withAuth, async (req, res) => {
     try {
         const characterData = await Character.findByPk(req.params.id, {
             include: [
@@ -62,6 +62,34 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
+//find all characters in db regardless of user
+router.get('/', async (req, res) => {
+    try {
+        const characters = await Character.findAll({});
+        console.log(characters);
+        res.json(characters)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+
+});
+
+//find one character by character id
+
+router.get('/:id', withAuth, async (req, res) => {
+    try{ 
+        const characterData = await Character.findByPk(req.params.id);
+        if(!characterData) {
+            res.status(404).json({message: 'No character with this id!'});
+            return;
+        }
+        const character = characterData.get({ plain: true });
+        res.render('character-selection', character);
+      } catch (err) {
+          res.status(500).json(err);
+      };     
+});
+
 //update a character TODO: we need to decide if we are going to include this or not. We would need a separate page I think.
 router.put('/:id', async (req, res) => {
     try {
@@ -78,17 +106,5 @@ router.put('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-});
-
-//find all characters in db regardless of user
-router.get('/', async (req, res) => {
-    try {
-        const characters = await Character.findAll({});
-        console.log(characters);
-        res.json(characters)
-    } catch (err) {
-        res.status(400).json(err);
-    }
-
 });
 
