@@ -20,7 +20,6 @@ const hbs = exphbs.create({});
 const models = require('./models');
 // default option
 
-
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
@@ -68,14 +67,9 @@ app.post('/upload', (req, res) => {
         if (err) {
             return res.status(500).send(err);
         }
-
         res.send('File uploaded to ' + uploadPath);
-
     });
-
-
 });
-
 
 sequelize.sync({
     force: false

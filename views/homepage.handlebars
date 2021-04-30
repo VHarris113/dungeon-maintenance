@@ -9,7 +9,7 @@
 </div>
 </br>
 <div>
-    <img src='../public/img/default.jpg'>
+    <img src="../public/img/default.jpg">
 </div>
 
 {{!-- end section for image upload --}}
@@ -32,9 +32,9 @@
     <article>
         <h2>LOG IN</h2>
         <h3>EMAIL</h3>
-        <input type="EMAIL" />
+        <input class="form-input" id="email-login" type="text" />
         <h3>PASSWORD</h3>
-        <input type="password" />
+        <input id="password-login" type="password" class="form-input" />
         <div>
             <button class="login-form">SUBMIT</button>
         </div>
@@ -76,4 +76,5 @@
     </article>
 </div> --}}
 {{/if}}
-<script src="./js/login.js"></script>
+<script src="/public/js/login.js"></script>
+<script src="/public/js/logout.js"></script>

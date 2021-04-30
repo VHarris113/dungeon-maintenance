@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Character, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //create a character
-router.post('/create', withAuth, async (req, res) => {
+router.post('/create', withAuth, (req, res) => {
     try {
-        const newCharacter = await Character.create({
+        const newCharacter = Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
@@ -108,3 +109,4 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+module.exports = router;
