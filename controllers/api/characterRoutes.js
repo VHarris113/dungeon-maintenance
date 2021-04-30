@@ -72,19 +72,21 @@ router.get('/', async (req, res) => {
 
 // //find one character by character id
 
-// router.get('/:id', withAuth, async (req, res) => {
-//     try{ 
-//         const characterData = await Character.findByPk(req.params.id);
-//         if(!characterData) {
-//             res.status(404).json({message: 'No character with this id!'});
-//             return;
-//         }
-//         const character = characterData.get({ plain: true });
-//         res.render('character-selection', character);
-//       } catch (err) {
-//           res.status(500).json(err);
-//       };     
-// });
+router.get('/:character_id', async (req, res) => {
+    console.log(req.params.Character)
+    try{ 
+        const characterData = await Character.findByPk(req.params.character_id);
+        if(!characterData) {
+            res.status(404).json({message: 'No character with this id!'});
+            return;
+        }
+        const character = characterData.get({ plain: true });
+        res.render('character-selection', character);
+        // res.status(200).json(character)
+      } catch (err) {
+          res.status(500).json(err);
+      };     
+});
 
 // //update a character TODO: we need to decide if we are going to include this or not. We would need a separate page I think.
 // router.put('/:id', async (req, res) => {
