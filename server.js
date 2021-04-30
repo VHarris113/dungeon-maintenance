@@ -21,17 +21,17 @@ const models = require('./models');
 // default option
 
 
-const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
-};
+// const sess = {
+//     secret: 'Super secret secret',
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+//     store: new SequelizeStore({
+//       db: sequelize
+//     })
+// };
 
-  app.use(session(sess));
+//   app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -51,7 +51,7 @@ app.use(express.static('upload'));
 app.post('/upload', (req, res) => {
     let sampleFile;
     let uploadPath;
-    console.log(req.files.cat)
+    console.log(req)
     if (!req.files || Object.keys(req.files).length === 0) {
         console.log("not right")
         return res.status(400).send('No files uploaded.');
@@ -75,8 +75,6 @@ app.post('/upload', (req, res) => {
 
 
 });
-
-
 sequelize.sync({
     force: false
 }).then(() => {
