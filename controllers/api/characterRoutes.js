@@ -5,12 +5,12 @@ const { Character, User } = require('../../models');
 router.post('/create', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
-           ...req.body,
-           user_id: req.session.user_id, 
+            ...req.body,
+            user_id: req.session.user_id,
         });
 
         res.status(200).json(newCharacter);
-    } catch(err) {
+    } catch (err) {
         res.status(400).json(err);
     }
 });
@@ -18,25 +18,26 @@ router.post('/create', withAuth, async (req, res) => {
 //delete a character
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const characterData = await Character.destroy({
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
-  
-      if (!characterData) {
-        res.status(404).json({ message: 'No character found with this id!' });
-        return;
-      }
-  
-      res.status(200).json(characterData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+        const characterData = await Character.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
 
-  //find all characters by user id
+        if (!characterData) {
+            res.status(404).json({ message: 'No character found with this id!' });
+            return;
+        }
+
+        res.status(200).json(characterData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+//find all characters by user id TODO: confirm that this finds by user id and not character id
 router.get('/:id', withAuth, async (req, res) => {
     try {
         const characterData = await Character.findByPk(req.params.id, {
@@ -47,18 +48,35 @@ router.get('/:id', withAuth, async (req, res) => {
                 },
             ],
         });
-        
-        const userCharacter = characterData.get({ plain: true});
+
+        const userCharacter = characterData.get({ plain: true });
         console.log(userCharacter);
         res.render('character-selection', {
-            ...userCharacter});
+            ...userCharacter
+        });
 
     } catch (err) {
         res.status(404)
         alert("You have no characters to display!")
-        .then(res.redirect('/create'));
+            .then(res.redirect('/create'));
     }
-})
-//router to view all characters
+});
+
+//update a character TODO: we need to decide if we are going to include this or not. We would need a separate page I think.
+router.put('/:id', async (req, res) => {
+    try {
+        const characterData = Character.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!characterData[0]) {
+            res.status(404).json({message: 'No character found with this id!'});
+            return;
+        }
+        res.status(200).json(characterData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 //router to choose one character
-//router to edit character
