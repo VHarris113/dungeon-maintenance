@@ -6,7 +6,9 @@ const createCharacterHandler = async (event) => {
     const charRace = document.querySelector('#character-race').value.trim();
     const charClass = document.querySelector('#character-class').value.trim();
     const charDescription = document.querySelector('#character-description').value.trim();
+    const charPhoto = document.querySelector('#character-photo');
 
+    //TODO: ask how to display photo here
     if (charName && charRace && charClass && charDescription) {
         const response = await fetch('/api/character/create', {
             method: 'POST',
@@ -25,5 +27,5 @@ const createCharacterHandler = async (event) => {
 };
 
 document
-  .querySelector('.character-creation-form')
-  .addEventListener('submit', createCharacterHandler);
+    .querySelector('.character-creation-form')
+    .addEventListener('submit', createCharacterHandler);
