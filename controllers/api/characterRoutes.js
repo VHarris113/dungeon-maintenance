@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const fileUpload = require('express-fileupload');
 
 //create a character
 router.post('/create', async (req, res) => {
@@ -127,32 +128,32 @@ router.get('/:character_id', async (req, res) => {
 // });
 
 // route for upload picture
-router.post('/', (req, res) => {
-    let sampleFile;
-    let uploadPath;
-    console.log(req.files.cat)
-    if (!req.files || Object.keys(req.files).length === 0) {
-        console.log("not right")
-        return res.status(400).send('No files uploaded.');
-    }
-    //name of input is sampleFile
-    sampleFile = req.files.cat;
+// router.post('/', (req, res) => {
+//     let sampleFile;
+//     let uploadPath;
+//     console.log(req)
+//     if (!req.files || Object.keys(req.files).length === 0) {
+//         console.log("not right")
+//         return res.status(400).send('No files uploaded.');
+//     }
+//     //name of input is sampleFile
+//     sampleFile = req.files.cat;
 
-    uploadPath = __dirname + '/upload/' + sampleFile.name
-    console.log(sampleFile);
+//     uploadPath = __dirname + '/upload/' + sampleFile.name
+//     console.log(sampleFile);
 
-    //use mv to put file on server
+//     //use mv to put file on server
 
-    sampleFile.mv(uploadPath, function (err) {
-        if (err) {
-            return res.status(500).send(err);
-        }
+//     sampleFile.mv(uploadPath, function (err) {
+//         if (err) {
+//             return res.status(500).send(err);
+//         }
 
-        res.send('File uploaded to ' + uploadPath);
+//         res.send('File uploaded to ' + uploadPath);
 
-    });
+//     });
 
 
-});
+// });
 
 module.exports = router;

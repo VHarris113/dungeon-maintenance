@@ -48,7 +48,33 @@ app.use(fileUpload());
 app.use(express.static('public'));
 app.use(express.static('upload'));
 
+app.post('/upload', (req, res) => {
+    let sampleFile;
+    let uploadPath;
+    console.log(req)
+    if (!req.files || Object.keys(req.files).length === 0) {
+        console.log("not right")
+        return res.status(400).send('No files uploaded.');
+    }
+    //name of input is sampleFile
+    sampleFile = req.files.cat;
 
+    uploadPath = __dirname + '/upload/' + sampleFile.name
+    console.log(sampleFile);
+
+    //use mv to put file on server
+
+    sampleFile.mv(uploadPath, function (err) {
+        if (err) {
+            return res.status(500).send(err);
+        }
+
+        res.send('File uploaded to ' + uploadPath);
+
+    });
+
+
+});
 sequelize.sync({
     force: false
 }).then(() => {
