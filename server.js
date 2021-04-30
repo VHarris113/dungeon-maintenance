@@ -2,11 +2,13 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const session = require('express-session')
 // const helpers = require('./utils/helpers');
 const auth = require('./utils/auth');
 const fileUpload = require('express-fileupload');
 
 const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,10 +17,21 @@ const PORT = process.env.PORT || 3000;
 const hbs = exphbs.create({});
 
 // This is the line that will inject the tables directly to your database
-const models = require('./models');
-
+const models = require('./modelss
 // default option
 
+=======
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+};
+
+  app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

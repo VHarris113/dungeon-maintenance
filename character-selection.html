@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/select.css" />
+    <title>Character Selection</title>
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -13,41 +14,62 @@
   />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-
+<body class="body">
     <div>
-        <nav>
-          <h1>DUNGEON MAINTENANCE</h1>
-          <div>
-            <button>Characters</button>
-            <button>Log out</button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dungeon Maintenance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log in</a>
+            </li>
+          </ul>
           </div>
-        </nav>
+        </div>
+      </nav>
       </div>
-
       <div>
-        <header>
+        <header class="headerbox">
           <h2>Your Characters</h2>
         </header>
       </div>
-
-      <section>
-          <h3>Character Name</h3>
+      <section class="sectionbox">
+        <header class="header">
+          <h3>Character Name</h3> 
+         </header>
           <div>
-            <article>
-                <h3>Description</h3>
+            <div>
+              <img src="assets/images/filler.png" alt="assets/images/filler.png">
+            </div>
+            <header class="header">
+             <h3>Description</h3> 
+            </header>
+            <article class="info">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis? Ut esse incidunt dolores asperiores quam voluptatem nemo quos quo saepe ex quasi recusandae maxime, officiis impedit fugiat. Quibusdam, cumque?</h4>
             </article>
-            <article>
-                <h3>Race</h3>
+            <header class="header">
+              <h3>Race</h3> 
+             </header>
+            <article class="race">
+                <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi laudantium officiis rerum unde hic, consequatur voluptate. Sequi rerum accusantium non esse maiores, praesentium delectus debitis culpa a fuga, beatae voluptas.</h4>
             </article>
-            <article>
-                <h3>Class</h3>
+            <header class="header">
+              <h3>Class</h3> 
+             </header>
+            <article class="class">
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere consequuntur illo accusamus fugiat pariatur, nisi aliquam vero, excepturi corrupti inventore vel, nobis reprehenderit ea corporis quod voluptatum nihil! Inventore, voluptatibus.</h4>
             </article>
           </div>
       </section>
-
-      
-    
 </body>
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
