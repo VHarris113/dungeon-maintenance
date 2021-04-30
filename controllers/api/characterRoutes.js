@@ -18,12 +18,13 @@ router.post('/create', async (req, res) => {
 
 
 //delete a character
-// router.delete('/:id', withAuth, async (req, res) => {
+// router.delete('/:id', async (req, res) => {
+//     console.log(req.params.character_id)
 //     try {
 //         const characterData = await Character.destroy({
 //             where: {
-//                 id: req.params.id,
-//                 user_id: req.session.user_id,
+//                 id: req.params.character_id,
+//                 // user_id: req.session.user_id,
 //             },
 //         });
 
@@ -40,16 +41,9 @@ router.post('/create', async (req, res) => {
 
 
 // //find all characters by user id 
-// router.get('user/:id', withAuth, async (req, res) => {
+// router.get('/user/:id', async (req, res) => {
 //     try {
-//         const characterData = await Character.findByPk(req.params.id, {
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: id,
-//                 },
-//             ],
-//         });
+//         const characterData = await Character.findAll(req.params.user_id);
 
 //         const userCharacter = characterData.get({ plain: true });
 //         console.log(userCharacter);
@@ -58,23 +52,23 @@ router.post('/create', async (req, res) => {
 //         });
 
 //     } catch (err) {
-//         res.status(404)
-//         alert("You have no characters to display!")
+//         res.status(404);
+//         res.send("You have no characters to display!")
 //             .then(res.redirect('/create'));
 //     }
 // });
 
 // //find all characters in db regardless of user
-// router.get('/', async (req, res) => {
-//     try {
-//         const characters = await Character.findAll({});
-//         console.log(characters);
-//         res.json(characters)
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
+router.get('/', async (req, res) => {
+    try {
+        const characters = await Character.findAll({});
+        console.log(characters);
+        res.json(characters)
+    } catch (err) {
+        res.status(400).json(err);
+    }
 
-// });
+});
 
 // //find one character by character id
 
