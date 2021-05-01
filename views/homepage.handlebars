@@ -19,30 +19,33 @@
         <div class="box-container">
             <section class="single-box">
                 <h2 id="login">LOG IN</h2>
+                <form class="form login-form">
                 <h3>EMAIL</h3>
-                <input type="EMAIL" />
+                <input id="email-login" type="EMAIL" />
                 <h3>PASSWORD</h3>
-                <input type="password" />
+                <input id="password-login" type="password" />
                 <div>
-                    <button>SUBMIT</button>
-                </div>
+                    <button class="login-form">SUBMIT</button>
+                </div></form>
                 <!-- This is the sign up link we cant get to work yet! -->
                 <h4>Don't have an account? <href>Sign up here!</href>
                 </h4>
             </section>
             <section class="single-box">
                 <h2 id="signup">SIGN UP</h2>
+                  <form class="signup-form"><h3>NAME</h3>
+                <input id="name-signup" type="TEXT" />
                 <h3>EMAIL</h3>
-                <input type="EMAIL" />
+                <input id="email-signup" type="EMAIL" />
                 <h3>PASSWORD</h3>
-                <input type="password" />
+                <input id="password-signup" type="password" />
                 <div>
-                    <button>SUBMIT</button>
-                </div>
+                    <button type="submit">SUBMIT</button>
+                </div></form>
             </section>
         </div>
         {{/if}}
-        <script src="./js/login.js"></script>
+        {{!-- <script src="./js/login.js"></script> --}}
  {{!-- section for image upload, move when done --}}
 {{!-- <div>
     <form action='/upload' method='POST' enctype="multipart/form-data">
