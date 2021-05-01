@@ -51,12 +51,13 @@ router.get('/user/:user_id', async (req, res) => {
                 user_id: req.params.user_id
             }
     });
-    const something = charData.map(char => char.get({plain : true}));
-    console.log(something);
-    res.render('character-selection', {something});
+    const characters = charData.map(char => char.get({plain : true}));
+    console.log(characters);
+    res.render('character-selection', {characters});
 } catch (err) {
     res.status(500).json(err);
 }
+});
     // console.log(req.params.user_id)
 //     try {
 //         //const characterData = await Character.findByFk(req.params.user_id);
@@ -79,14 +80,15 @@ router.get('/user/:user_id', async (req, res) => {
 //        // res.send("You have no characters to display!");
 //          //  res.redirect('/create');
 //     }
-});
+// });
 
 // //find all characters in db regardless of user
 router.get('/', async (req, res) => {
     try {
-        const characters = await Character.findAll({});
+        const charData = await Character.findAll({});
+        const characters = charData.map(char => char.get({plain : true}));
         console.log(characters);
-        res.json(characters)
+        res.render('character-selection', {characters});
     } catch (err) {
         res.status(400).json(err);
     }
