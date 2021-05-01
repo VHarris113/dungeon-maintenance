@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 const fileUpload = require('express-fileupload');
 
 //create a character
 router.post('/create', async (req, res) => {
+
     try {
-        const newCharacter = await Character.create({
+        const newCharacter = Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
