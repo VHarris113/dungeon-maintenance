@@ -28,36 +28,42 @@
 {{#if logged_in}}
 <div></div>
 {{else}}
-<div>
-    <article>
-        <h2>LOG IN</h2>
-        <h3>EMAIL</h3>
-        <input class="form-input" id="email-login" type="text" />
-        <h3>PASSWORD</h3>
-        <input id="password-login" type="password" class="form-input" />
-        <div>
-            <button class="login-form">SUBMIT</button>
-        </div>
-        <!-- This is the sign up link we cant get to work yet! -->
-        <h3>Don't have an account? <href>Sign up here!</href>
-        </h3>
-    </article>
-</div>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Login</h2>
+
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Trek the Dungeon</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
 
 <form class="signup-form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="text" id="name-signup" />
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Email</label>
-    <input type="email" id="email-signup" />
-  </div>
-  <div class="form-group form-check">
-      <label class="form-check-label" for="exampleCheck1">Password</label>
-        <input type="password" id="password-signup" />
-    </div>
-  <button type="button" id="signup-form" class="btn btn-primary">Submit</button>
+      <div class="form-group">
+        <label for="name-signup">Name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">Email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Join Our Guild</button>
+      </div>
 </form>
 <!-- This is the sign up section. -->
 {{!-- <div>
@@ -76,5 +82,5 @@
     </article>
 </div> --}}
 {{/if}}
-<script src="/public/js/login.js"></script>
-<script src="/public/js/logout.js"></script>
+<script src="./js/login.js"></script>
+{{!-- <script src="/public/js/logout.js"></script> --}}

@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/character-selection');
       } else {
-        alert('Failed to login. Try again.');
+        alert('Alas! The magic failed. Try again.');
       }
     }
   };
@@ -38,17 +38,17 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to sign up. Try again.');
+        alert('Alas! The magic failed. Try again.');
       }
       console.log(response);
     }
   };
   
   document
-    .querySelector('#login-form')
+    .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
   document
-    .querySelector('#signup-form')
+    .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
   
