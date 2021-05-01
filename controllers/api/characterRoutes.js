@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 const fileUpload = require('express-fileupload');
 
 //create a character
-router.post('/create', async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
         const newCharacter = Character.create({
@@ -13,7 +13,7 @@ router.post('/create', async (req, res) => {
             user_id: req.session.user_id,
         });
 
-        res.status(200).json(newCharacter);
+      res.render('character-selection',{newCharacter})
     } catch (err) {
         res.status(400).json(err);
     }
