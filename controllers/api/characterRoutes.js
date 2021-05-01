@@ -5,18 +5,29 @@ const withAuth = require('../../utils/auth');
 const fileUpload = require('express-fileupload');
 
 //create a character
+//TODO: add back withAuth
 router.post('/create', async (req, res) => {
 
     try {
-        const newCharacter = Character.create({
+        const newCharacter = await Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
-
+        console.log(newCharacter);
         res.status(200).json(newCharacter);
+        // res.render('character-selection')
     } catch (err) {
         res.status(400).json(err);
     }
+
+    //TEST 
+    // {
+    //     "name": "MYSTIC METAL FINGERS DOOMTRON",
+    //     "race": "Tiefling",
+    //     "class": "Wizard",
+    //     "description": "MF DOOMTRON uses his magical metal fingers to cast Sick Beats on his enemies, effectively entagling them in a web of smooth and unsuspecting ryhme schemes and samples.",
+    //     "user_id": 4
+    // }
 });
 
 

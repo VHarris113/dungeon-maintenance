@@ -18,10 +18,11 @@ const createCharacterHandler = async (event) => {
 
         if (response.ok) {
             // If successful, redirect the browser to the profile page
-            alert('Your character has been created!');
+            alert('THE DND GODS SAY: We smile upon you and your creation. Go forth, mortal.');
             document.location.replace('/character-selection');
         } else {
-            alert('Failed to login. Try again.');
+            alert('THE DND GODS SAY: Your character does not please us. Try again, mortal.');
+            return
         }
     }
 };
