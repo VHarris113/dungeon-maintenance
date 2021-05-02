@@ -1,7 +1,63 @@
 {{!-- for create character button class="character-creation-form" --}}
-{{!-- class="character-name" --}}
-{{!-- class="character-race" --}}
-{{!-- class="character-class" --}}
-{{!-- class="character-description" --}}
-{{!-- class="character-photo" --}}
+{{!-- id="character-name" --}}
+{{!-- id="character-race" --}}
+{{!-- id="character-class" --}}
+{{!-- id="character-description" --}}
+{{!-- id="character-photo" --}}
+
+<div id="content-container">
+          <header>
+            <h1>Build your Character</h1>
+          </header>
+        <form class="character-creation-form input-container">
+          <div>
+            <h2>Name</h2>
+            <input id="character-name" type="text" />
+            <div>
+              <button>Randomize</button>
+            </div>
+          </div>
+          <div class="description">
+            <h2>Description</h2>
+            <textarea id="character-description" name ="Description" rows="10" cols="40">
+              Input your backstory here.
+            </textarea>
+            <div>
+              <button>Randomize</button>
+            </div>
+            <div>
+              <label for="Class">Class</label>
+              <select id="character-class" id="Class">
+                  <option value="Class">Barbarian</option>
+                  <option value="Class">Bard</option>
+                  <option value="Class">Cleric</option>
+                  <option value="Class">Druid</option>
+                  <option value="Class">Fighter</option>
+                  <option value="Class">Monk</option>
+                  <option value="Class">Paladin</option>
+                  <option value="Class">Ranger</option>
+                  <option value="Class">Rogue</option>
+                  <option value="Class">Sorcerer</option>
+                  <option value="Class">Wizard</option>
+                  <option value="Class">Warlock</option>
+              </select>
+          </div>
+          <div>
+              <label for="Race">Race</label>
+              <select id="character-race" id="Race">
+                  <option value="Race">Dragonborn</option>
+                  <option value="Race">Dwarf</option>
+                  <option value="Race">Elf</option>
+                  <option value="Race">Gnome</option>
+                  <option value="Race">Half-Elf</option>
+                  <option value="Race">Halfling</option>
+                  <option value="Race">Half-Orc</option>
+                  <option value="Race">Human</option>
+                  <option value="Race">Tiefling</option>
+              </select>
+          </div>
+          <input type="submit" value="Create Character">
+        </form>
+
+</div>
 <script src="./js/characterCreation.js"></script>
