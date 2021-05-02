@@ -1,59 +1,69 @@
+<div class="container">
+    <section>
+        <img src="/img/Dunmain.jpg" alt="Dunmain" style="width-200px" ; />
 
-        <div class="container">
-            <section>
-                <img src="/img/Dunmain.jpg" alt="Dunmain" style="width-200px" ; />
-
-                <h1>WELCOME TO DUNGEON MAINTENANCE</h1>
-                <h2>ABOUT SECTION: Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque natus quod iste nobis
-                    temporibus quibusdam officiis atque quos ut eveniet aliquam modi, earum pariatur quas. Voluptatibus
-                    animi quisquam eius in?</h2>
-                <h2>HOW TO SECTION: Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illum beatae aut hic,
-                    quibusdam omnis culpa eveniet magnam animi velit ipsa. Tempore omnis aliquam facere laboriosam,
-                    distinctio ratione explicabo maxime? </h2>
-            </section>
-        </div>
-        {{#if logged_in}}
-        <div></div>
-        {{else}}
-        <!-- This is the login section. (Had to put a div in to separate the submit button) -->
-        <div class="box-container">
-            <section class="single-box">
-                <h2 id="login">LOG IN</h2>
-                <form class="login-form">
-                <h3>EMAIL</h3>
-                <input id="email-login" type="EMAIL" />
-                <h3>PASSWORD</h3>
-                <input id="password-login" type="password" />
-                <div>
-                    <button class="login-form">SUBMIT</button>
-                </div></form>
-                <!-- This is the sign up link we cant get to work yet! -->
-                <h4>Don't have an account? <href>Sign up here!</href>
-                </h4>
-            </section>
-            <section class="single-box">
-                <h2 id="signup">SIGN UP</h2>
-                  <form class="signup-form"><h3>NAME</h3>
-                <input id="name-signup" type="TEXT" />
-                <h3>EMAIL</h3>
-                <input id="email-signup" type="EMAIL" />
-                <h3>PASSWORD</h3>
-                <input id="password-signup" type="password" />
-                <div>
-                    <button type="submit">SUBMIT</button>
-                </div></form>
-            </section>
-        </div>
-        {{/if}}
-        {{!-- <script src="./js/login.js"></script> --}}
- {{!-- section for image upload, move when done --}}
+        <h1>WELCOME TO DUNGEON MAINTENANCE</h1>
+        <h2>A place for all your mainstream and misfit Dungeons and Dragons characters to grow, flourish, and mingle!
+            Finally, one convenient location to store all of your character ideas! From your curious and brave Elven
+            Rangers seeking out knowledge and adventure in the farthest reaches of the land to your Tiefling Sorcerer
+            head cheerleader bent on destroying the Lich that killed her prom date, all are welcome here. </h2>
+        <h2>Head over to our <a href="/api/character">Community Characters</a> tab where you will be able to see all of
+            the
+            characters in the Dungeon at this time. Add your own in the Build Your Character form and come back
+            later to
+            see which other poor souls have been trapped with your creations. Soon, you will be able to view and
+            edit
+            your own characters and get inspired via the randomized name and description feature as well. Now, go
+            forth
+            and may the dice be in your favor! </h2>
+    </section>
+</div>
+{{#if logged_in}}
+<div></div>
+{{else}}
+<!-- This is the login section. (Had to put a div in to separate the submit button) -->
+<div class="box-container">
+    <section class="single-box">
+        <h2 id="login">LOG IN</h2>
+        <form class="login-form">
+            <h3>EMAIL</h3>
+            <input id="email-login" type="EMAIL" />
+            <h3>PASSWORD</h3>
+            <input id="password-login" type="password" />
+            <div>
+                <button class="login-form">SUBMIT</button>
+            </div>
+        </form>
+        <!-- This is the sign up link we cant get to work yet! -->
+        <h4>Don't have an account? <href>Sign up here!</href>
+        </h4>
+    </section>
+    <section class="single-box">
+        <h2 id="signup">SIGN UP</h2>
+        <form class="signup-form">
+            <h3>NAME</h3>
+            <input id="name-signup" type="TEXT" />
+            <h3>EMAIL</h3>
+            <input id="email-signup" type="EMAIL" />
+            <h3>PASSWORD</h3>
+            <input id="password-signup" type="password" />
+            <div>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </section>
+</div>
+{{/if}}
+{{!--
+<script src="./js/login.js"></script> --}}
+{{!-- section for image upload, move when done --}}
 {{!-- <div>
     <form action='/upload' method='POST' enctype="multipart/form-data">
-    <h3>Upload File</h3>
-    <input type='file' name='cat' />
-    <input type="submit" class="btn btn-primary">
+        <h3>Upload File</h3>
+        <input type='file' name='cat' />
+        <input type="submit" class="btn btn-primary">
 
-</form>
+    </form>
 </div>
 </br>
 <div>

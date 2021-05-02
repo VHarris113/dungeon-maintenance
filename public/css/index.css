@@ -2,10 +2,10 @@
     background-color: #a77e58;
 }
 .container {
-    background-color: #d9cfc1;
+    background-color: #6b705c;
 }
 .info-section {
-    background-color: #d9cfc1;
+    background-color: #6b705c;
     display: flex;
     flex-direction: row;
 }
@@ -22,7 +22,7 @@
     margin: 20px;
     padding: 20px;
     transition: 0.3s;
-    background-color:#d9cfc1;
+    background-color:#6b705c;
   }
   .box-container {
     display: flex;

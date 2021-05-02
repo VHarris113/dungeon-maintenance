@@ -10,9 +10,9 @@
     justify-content: center;
     width: auto;
     height: auto;
-    border-radius: 4px;
+    border-radius: 15px;
     text-align: center;
-    margin: 5% 200px;
+    margin: 5% 610px;
     padding: 50px;
     background-color:#d9cfc1;
 }
@@ -27,7 +27,7 @@ width: 57%;
 }
 
 .input-container {
-background-color: #ba3f1d;
+background-color: #6b705c;
 padding: 50px;
 }
 
