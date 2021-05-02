@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-const fileUpload = require('express-fileupload');
+const multer = require('multer');
+// const fileUpload = require('express-fileupload');
 
 //create a character
 router.post('/', async (req, res) => {
