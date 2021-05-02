@@ -99,41 +99,4 @@ Hewwo
           <input  type="submit" value="Create Character">
         </form>
       </div>  
-<div>
-    <header class="headerbox">
-        <h2>Your Characters</h2>
-    </header>
-</div>
-{{#each characters as |char|}}
-<section class="sectionbox">
-    <header class="header">
-        <h3>{{char.name}}</h3>
-    </header>
-    <div>
-        <div>
-            <img src="assets/images/filler.png" alt="assets/images/filler.png">
-        </div>
-        <header class="header">
-            <h3>Description</h3>
-        </header>
-        <article class="info">
-            <h4>{{char.description}}</h4>
-        </article>
-        <header class="header">
-            <h3>Race</h3>
-        </header>
-        <article class="race">
-            <h4>{{char.race}}</h4>
-        </article>
-        <header class="header">
-            <h3>Class</h3>
-        </header>
-        <article class="class">
-            <h4>{{char.class}}</h4>
-        </article>
-    </div>
-</section>
-{{/each}}
-
-
 <script src="./js/characterSelection.js"></script>
