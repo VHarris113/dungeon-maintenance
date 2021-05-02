@@ -53,7 +53,7 @@ router.get('/user/:user_id', async (req, res) => {
     });
     const something = charData.map(char => char.get({plain : true}));
     console.log(something);
-    res.render('character-selection', {something});
+    res.render('/api/character/:id', {something});
 } catch (err) {
     res.status(500).json(err);
 }
@@ -84,13 +84,25 @@ router.get('/user/:user_id', async (req, res) => {
 // //find all characters in db regardless of user
 router.get('/', async (req, res) => {
     try {
-        const characters = await Character.findAll({});
-        console.log(characters);
-        res.json(characters)
-    } catch (err) {
-        res.status(400).json(err);
-    }
+        const charData = await Character.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
 
+        const characters = charData.map((character) => character.get({plain: true}));
+        
+        res.render('character-selection', {
+            characters,
+            logged_in: req.session.logged_in,
+            logged_out: req.session.logged_out
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 // //find one character by character id
@@ -104,7 +116,7 @@ router.get('/:character_id', async (req, res) => {
             return;
         }
         const character = characterData.get({ plain: true });
-        res.render('character-selection', character);
+        res.render('/character', character);
         // res.status(200).json(character)
       } catch (err) {
           res.status(500).json(err);
