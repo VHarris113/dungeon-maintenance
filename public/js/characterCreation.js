@@ -28,5 +28,5 @@ const createCharacterHandler = async (event) => {
 };
 
 document
-    .querySelector('#form-button')
-    .addEventListener('click', createCharacterHandler);
+    .querySelector('.character-creation-form')
+    .addEventListener('submit', createCharacterHandler);
