@@ -39,7 +39,7 @@ Hewwo
           <h3>Class</h3>
         </header>
         <article class="class">
-          <h4>{{char.class}}</h4>
+          <h4>{{char.char_class}}</h4>
         </article>
       </div>
     </div>
@@ -60,6 +60,20 @@ Hewwo
       <textarea class="character-description" name="Description" rows="10" cols="40"
         placeholder="Input your backstory here."></textarea>
       <div>
+        <label for="Race">Race</label>
+        <select id="Race" class="character-race">
+          <option value="Race">Dragonborn</option>
+          <option value="Race">Dwarf</option>
+          <option value="Race">Elf</option>
+          <option value="Race">Gnome</option>
+          <option value="Race">Half-Elf</option>
+          <option value="Race">Halfling</option>
+          <option value="Race">Half-Orc</option>
+          <option value="Race">Human</option>
+          <option value="Race">Tiefling</option>
+        </select>
+      </div>
+      <div>
         <label for="Class">Class</label>
         <select id="Class" class="character-class">
           <option value="Class">Barbarian</option>
@@ -75,24 +89,6 @@ Hewwo
           <option value="Class">Wizard</option>
           <option value="Class">Warlock</option>
         </select>
-      </div>
-      <div>
-        <label for="Race">Race</label>
-        <select id="Race" class="character-race">
-          <option value="Race">Dragonborn</option>
-          <option value="Race">Dwarf</option>
-          <option value="Race">Elf</option>
-          <option value="Race">Gnome</option>
-          <option value="Race">Half-Elf</option>
-          <option value="Race">Halfling</option>
-          <option value="Race">Half-Orc</option>
-          <option value="Race">Human</option>
-          <option value="Race">Tiefling</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="project-img">image:</label>
-        <input type="file" id="project-img" name="project-img" />
       </div>
       <input type="submit" value="Create Character">
   </form>
