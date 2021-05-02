@@ -35,7 +35,7 @@ Character.init(
         },
         profile_image: {
             type: DataTypes.STRING,
-            defaultValue: 'default.png',
+            defaultValue: 'filler.png',
         },
     },
     {

@@ -14,36 +14,41 @@ Hewwo
     <h2>Your Characters</h2>
   </header>
 </div>
-{{#each characters as |char|}}
-<section class="sectionbox">
-  <header class="header">
-    <h3>{{char.name}}</h3>
-  </header>
+<div class="box-wrap">
+  {{#each characters as |char|}}
   <div>
-    <div>
-      <img class="project-img" src="/img/{{profile_image}}" alt="Project Image">
+    <div class="sectionbox">
+      <header id="header">
+        <h3>{{char.name}}</h3>
+      </header>
+      <div>
+        <div>
+          <img src="/img/filler.png" alt="/img/filler.png">
+        </div>
+        <header class="header">
+          <h3>Description</h3>
+        </header>
+        <article class="info">
+          <h4 class="fitcont">{{char.description}}</h4>
+        </article>
+        <header class="header">
+          <h3>Race</h3>
+        </header>
+        <article class="race">
+          <h4>{{char.race}}</h4>
+        </article>
+        <header class="header">
+          <h3>Class</h3>
+        </header>
+        <article class="class">
+          <h4>{{char.class}}</h4>
+        </article>
+      </div>
     </div>
-    <header class="header">
-      <h3>Description</h3>
-    </header>
-    <article class="info">
-      <h4>{{char.description}}</h4>
-    </article>
-    <header class="header">
-      <h3>Race</h3>
-    </header>
-    <article class="race">
-      <h4>{{char.race}}</h4>
-    </article>
-    <header class="header">
-      <h3>Class</h3>
-    </header>
-    <article class="class">
-      <h4>{{char.class}}</h4>
-    </article>
   </div>
-</section>
-{{/each}}
+  {{/each}}
+</div>
+
 
 <div id="content-container">
   <header>
@@ -53,18 +58,13 @@ Hewwo
     <div>
       <h2>Name</h2>
       <input type="text" class="character-name" />
-      <div>
-        <button>Randomize</button>
-      </div>
+
     </div>
     <div class="description">
       <h2>Description</h2>
       <textarea class="character-description" name="Description" rows="10" cols="40">
               Input your backstory here.
             </textarea>
-      <div>
-        <button>Randomize</button>
-      </div>
       <div>
         <label for="Class">Class</label>
         <select id="Class" class="character-class">

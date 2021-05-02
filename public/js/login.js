@@ -15,7 +15,7 @@ var loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/api/character');
+        document.location.replace('/api/character/user/');
         alert('Huzzah! Welcome to the Dungeon, warrior!')
       } else {
         alert('Alas! The magic failed. Try again.');
