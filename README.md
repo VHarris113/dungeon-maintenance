@@ -15,7 +15,7 @@ Have you ever been in the middle of traversing a dungeon only to be stopped by a
 This website offers a convenient and simple place to store all character data as well as campaign information (coming soon) to the fabulous world of Dungeons and Dragons. Inside this website, you will be able to login in and store your data for the most recent and past campaign characters at the click of a button.
 [Presentation](https://docs.google.com/presentation/d/1VnUTKGj1Qa3umHlzRK48jKRM5HoxeRR_mpJY2b0C42A/edit?usp=sharing)
 
-[![Dungeon-Maintenance](https://github.com/VHarris113/dungeon-maintenance/blob/readme/logo.png)](https://tranquil-castle-20966.herokuapp.com/))
+[![Dungeon-Maintenance](https://github.com/VHarris113/dungeon-maintenance/blob/78d0950fab7fb5045c789ed5e978d4fdd8ee2915/public/img/Dunmain.jpg)](https://tranquil-castle-20966.herokuapp.com/)
 
 ## Usage
 ![Gif]()
