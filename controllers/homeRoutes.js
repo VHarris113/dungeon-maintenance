@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 const {
     Character,
-    Chosen,
     User
 } = require('../models');
 
@@ -49,9 +48,11 @@ router.get('/login', (req, res) => {
     try {
         if (req.session.logged_in) {
             res.redirect('/character-selection')
+
+            return;
         }
 
-        res.render('character-selection');
+        res.render('homepage');
 
     } catch (err) {
         res.status(500).json(err);
