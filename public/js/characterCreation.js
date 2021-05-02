@@ -4,8 +4,10 @@ const createCharacterHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('.character-name').value.trim();
-    const race = document.querySelector('.character-race').value.trim();
-    const char_class = document.querySelector('.character-class').value.trim();
+    const raceResponse = document.querySelector('.character-race');
+    const race = raceResponse.options[raceResponse.selectedIndex].text;
+    const char_classResponse = document.querySelector('.character-class');
+    const char_class = char_classResponse.options[char_classResponse.selectedIndex].text;
     const description = document.querySelector('.character-description').value.trim();
     // const charPhoto = document.querySelector('#character-photo');
 
