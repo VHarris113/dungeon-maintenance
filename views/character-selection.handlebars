@@ -5,10 +5,8 @@
   <h2>{{this.name}}</h2>
 </div>
 Hewwo
-
 {{bleh.name}}
 {{bleh.description}} --}}
-
 <div>
   <header class="headerbox">
     <h2>Your Characters</h2>
@@ -48,8 +46,6 @@ Hewwo
   </div>
   {{/each}}
 </div>
-
-
 <div id="content-container">
   <header>
     <h1>Build your Character</h1>
@@ -58,14 +54,11 @@ Hewwo
     <div>
       <h2>Name</h2>
       <input type="text" class="character-name" />
-
     </div>
     <div class="description">
       <h2>Description</h2>
-      <textarea class="character-description" name="Description" rows="10" cols="40">
-              Input your backstory here.
-            </textarea>
-
+      <textarea class="character-description" name="Description" rows="10" cols="40"
+        placeholder="Input your backstory here."></textarea>
       <div>
         <label for="Class">Class</label>
         <select id="Class" class="character-class">
@@ -100,4 +93,4 @@ Hewwo
       <input type="submit" value="Create Character">
   </form>
 </div>
-<script src="./js/characterSelection.js"></script>
+<script src="/js/characterCreation.js"></script>

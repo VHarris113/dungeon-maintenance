@@ -6,14 +6,14 @@ const fileUpload = require('express-fileupload');
 
 //create a character
 router.post('/', async (req, res) => {
-
+    console.log("##########", req.body);
     try {
         const newCharacter = Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
 
-      res.render('character-selection',{newCharacter})
+        res.render('character-selection', { newCharacter })
     } catch (err) {
         res.status(400).json(err);
     }
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 
 //delete a character
 router.delete('/:character_id', async (req, res) => {
-    console.log(req.params.character_id)
+    // console.log(req.params.character_id)
     try {
         const characterData = await Character.destroy({
             where: {
@@ -46,19 +46,19 @@ router.delete('/:character_id', async (req, res) => {
 // //find all characters by user id 
 router.get('/user/:user_id', async (req, res) => {
     try {
-    const charData = await Character.findAll({
+        const charData = await Character.findAll({
             where: {
                 user_id: req.params.user_id
             }
-    });
-    const characters = charData.map(char => char.get({plain : true}));
-    console.log(characters);
-    res.render('character-selection', {characters});
-} catch (err) {
-    res.status(500).json(err);
-}
+        });
+        const characters = charData.map(char => char.get({ plain: true }));
+        // console.log(characters);
+        res.render('character-selection', { characters });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
-    // console.log(req.params.user_id)
+// console.log(req.params.user_id)
 //     try {
 //         //const characterData = await Character.findByFk(req.params.user_id);
 // const characterData = await Character.findAll({
@@ -84,11 +84,12 @@ router.get('/user/:user_id', async (req, res) => {
 
 // //find all characters in db regardless of user
 router.get('/', async (req, res) => {
+    console.log("######### route hit")
     try {
         const charData = await Character.findAll({});
-        const characters = charData.map(char => char.get({plain : true}));
-        console.log(characters);
-        res.render('character-selection', {characters});
+        const characters = charData.map(char => char.get({ plain: true }));
+        // console.log(characters);
+        res.render('character-selection', { characters });
     } catch (err) {
         res.status(400).json(err);
     }
@@ -98,19 +99,19 @@ router.get('/', async (req, res) => {
 // //find one character by character id
 
 router.get('/:character_id', async (req, res) => {
-    console.log(req.params.Character)
-    try{ 
+    // console.log(req.params.Character)
+    try {
         const characterData = await Character.findByPk(req.params.character_id);
-        if(!characterData) {
-            res.status(404).json({message: 'No character with this id!'});
+        if (!characterData) {
+            res.status(404).json({ message: 'No character with this id!' });
             return;
         }
         const character = characterData.get({ plain: true });
         res.render('character-selection', character);
         // res.status(200).json(character)
-      } catch (err) {
-          res.status(500).json(err);
-      };     
+    } catch (err) {
+        res.status(500).json(err);
+    };
 });
 
 // //update a character TODO: we need to decide if we are going to include this or not. We would need a separate page I think.

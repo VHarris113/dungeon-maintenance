@@ -19,7 +19,7 @@ Character.init(
         race: {
             type: DataTypes.STRING,
         },
-        class: {
+        char_class: {
             type: DataTypes.STRING,
         },
         description: {
