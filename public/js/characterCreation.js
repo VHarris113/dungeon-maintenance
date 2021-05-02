@@ -6,13 +6,13 @@ const createCharacterHandler = async (event) => {
     const charRace = document.querySelector('.character-race').value.trim();
     const charClass = document.querySelector('.character-class').value.trim();
     const charDescription = document.querySelector('.character-description').value.trim();
-    // const charPhoto = document.querySelector('#character-photo');
+    const profile_image = document.getElementById('project-img').files[0];
 
     //TODO: ask how to display photo here
     if (charName && charRace && charClass && charDescription) {
         const response = await fetch('/api/character', {
             method: 'POST',
-            body: JSON.stringify({ charName, charRace, charClass, charDescription }),
+            body: JSON.stringify({ charName, charRace, charClass, charDescription, profile_image }),
             headers: { 'Content-Type': 'application/json' },
         });
 
