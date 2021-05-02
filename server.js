@@ -5,7 +5,6 @@ const routes = require('./controllers');
 const session = require('express-session')
 // const helpers = require('./utils/helpers');
 const auth = require('./utils/auth');
-const fileUpload = require('express-fileupload');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
