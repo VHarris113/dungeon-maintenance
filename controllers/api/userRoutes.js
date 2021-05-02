@@ -5,7 +5,7 @@ const { User } = require('../../models');
 //if logged in, route to character-creation.handlebars
 //post request to create new character
 router.post('/', async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
         const dbUserData = await User.create({
           name: req.body.name,
