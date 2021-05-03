@@ -179,7 +179,7 @@ const storage = multer.diskStorage({
     console.log('req.file', req.file);
   
     try {
-      const newProject = await Project.create({
+      const newProject = await Character.create({
         ...req.body,
         // If no image was uploaded, undefined is returned, and the project is created with the default image.
         image: req.file && req.file.originalname,
