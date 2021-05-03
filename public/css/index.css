@@ -1,13 +1,60 @@
 .body {
     background-color: #a77e58;
 }
+
+.imgbanner {
+    background-color: rgb(185, 185, 185);
+    background-size: cover;
+    background-position: center;
+    min-height: 20vh;
+    padding: 1% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
+}
+
+.imgbanner img {
+    max-width:fit-content;
+}
+
 .container {
     background-color: #6b705c;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: auto;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: .8rem;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
+     
 }
+
+.container div {
+    background-color: #ddbea9;
+    border-radius: 4px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: .8rem;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
+}
+
+.container h2 {
+    text-shadow: 5px 10px 18px #6b705c;
+}
+
 .info-section {
     background-color: #6b705c;
     display: flex;
     flex-direction: row;
+    
 }
 .single-box {
     position: relative;
@@ -23,6 +70,8 @@
     padding: 20px;
     transition: 0.3s;
     background-color:#6b705c;
+    border-radius: .8rem;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
   }
   .box-container {
     display: flex;
