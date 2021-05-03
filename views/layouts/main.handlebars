@@ -29,18 +29,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                {{#if logged_in}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/api/users/logout">Log Out</a>
+                    <a class="nav-link" id='logout' href="/">Log Out</a>
                 </li>
-                {{else}}
                 <li class="nav-item">
                     <a class="nav-link" href="/#signup">Sign Up</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/#login">Log in</a>
                 </li>
-                {{/if}}
                 <li class="nav-item">
                     <a class="nav-link" href="/api/character">Community Characters</a>
                 </li>
@@ -53,10 +50,12 @@
         <!-- This is the main header where the logo and primary information will be held -->
         {{{body}}}
     </main>
-    {{#if logged_in}}
-    <script src="./js/logout.js"></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
     {{/if}}
-    <script src="./js/login.js"></script>
+    {{#unless loggedIn}}
+        <script src="/js/login.js"></script>
+    {{/unless}}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

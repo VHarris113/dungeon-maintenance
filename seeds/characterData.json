@@ -2,21 +2,21 @@
     {
         "name": "Kull The Conquerer",
         "race": "Half-Orc",
-        "class": "Barbarian",
+        "char_class": "Barbarian",
         "description": "Conquers things well with his conquering fists",
         "user_id": 1
     },
     {
         "name": "Michael Fishbaum",
         "race": "Human",
-        "class": "Bard",
+        "char_class": "Bard",
         "description": "Community college professor and ornithologist who is recently divorced. Could really use a friend!",
         "user_id": 1
     },
     {
         "name": "Crimson Chin",
         "race": "Gnome",
-        "class": "Paladin",
+        "char_class": "Paladin",
         "description": "Uses his chin powers to defend all of mankind",
         "user_id": 2
     }

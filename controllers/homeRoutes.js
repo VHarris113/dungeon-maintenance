@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/', (req, res) => {
     try {
         res.render('homepage', {
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -46,7 +46,7 @@ router.get('/character-selection', withAuth, (req, res) => {
 //router to redirect to character-selection.handlebars after login
 router.get('/login', (req, res) => {
     try {
-        if (req.session.logged_in) {
+        if (req.session.loggedIn) {
             res.redirect('/character-selection')
 
             return;

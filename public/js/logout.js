@@ -3,7 +3,7 @@ const logout = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
-  
+    window.alert('HEWWO');
     if (response.ok) {
       document.location.replace('/');
     } else {

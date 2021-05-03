@@ -33,9 +33,10 @@ Character.init(
               key: 'id',
             },
         },
-        profile_image: {
+        image: {
             type: DataTypes.STRING,
-        },
+            defaultValue: 'filler.png',
+          },
     },
     {
         sequelize,
