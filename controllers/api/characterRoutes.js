@@ -9,14 +9,15 @@ const storage = multer.diskStorage({
       cb(null, __dirname + '../../../public/images/');
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname);
+      cb(null, path.extname(file.originalname));
     },
   });
-  
+
   const upload = multer({ storage: storage });
 
 router.post('/', withAuth, upload.single('image'),async (req, res) => {
     console.log("##########", req.body);
+    console.log(req.file.originalname)
     try {
         const characters = Character.create({
             ...req.body,
