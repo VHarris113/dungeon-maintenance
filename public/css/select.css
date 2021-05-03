@@ -11,6 +11,12 @@
   /* width: 50%; */
   height: auto;
   padding-left: 100px;
+  box-shadow: 5px 10px 18px rgb(39, 39, 39);
+}
+
+.headerbox h2 {
+  text-align: center;
+
 }
 
 .box-wrap {
@@ -33,8 +39,9 @@ height: auto;
 border-radius: 4px;
 text-align: center;
 margin: 20px;
+padding: 10px;
 border-radius: .8rem;
-box-shadow: 5px 10px 18px #88888896;
+box-shadow: 5px 10px 18px rgb(39, 39, 39);
 }
 
 .sectionbox img {
@@ -42,9 +49,8 @@ box-shadow: 5px 10px 18px #88888896;
   height: auto;
   object-fit: cover;
   display: block;
-
   border-radius: .8rem;
-  box-shadow: 5px 10px 18px #88888896;
+  box-shadow: 5px 10px 18px rgb(39, 39, 39);
 }
 
 .info {
@@ -53,7 +59,7 @@ box-shadow: 5px 10px 18px #88888896;
   padding: 15px;
   margin: 20px;
   border-radius: .8rem;
-  box-shadow: 5px 10px 18px #88888896;
+  box-shadow: 5px 10px 18px rgb(39, 39, 39);
 }
 
 .fitcont {
@@ -68,7 +74,7 @@ box-shadow: 5px 10px 18px #88888896;
   padding: 20px;
   margin: 20px;
   border-radius: .8rem;
-  box-shadow: 5px 10px 18px #88888896;
+  box-shadow: 5px 10px 18px rgb(39, 39, 39);
 }
 
 .class {
@@ -77,47 +83,13 @@ box-shadow: 5px 10px 18px #88888896;
     padding: 20px;
     margin: 20px;
     border-radius: .8rem;
-    box-shadow: 5px 10px 18px #88888896;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
   }
 
   .header {
     background-color: #a5a58d;
     margin: 20px;
     padding: 10px;
+    border-radius: .8rem;
+    box-shadow: 5px 10px 18px rgb(39, 39, 39);
   }
-/* #content-container {
-  background-color: #a77e58;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  background-color: #d9cfc1;
-}
-.info-section {
-  background-color: #d9cfc1;
-  display: flex;
-  flex-direction: row;
-}
-.sectionbox {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  height: auto;
-  border-radius: 4px;
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-  transition: 0.3s;
-  background-color: #d9cfc1;
-}
-.box-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 50%;
-} */
