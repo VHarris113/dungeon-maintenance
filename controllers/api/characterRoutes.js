@@ -160,8 +160,6 @@ router.get('/:character_id', async (req, res) => {
 
 // });
 
-module.exports = router;
-
 
 // From Multer documentation: https://github.com/expressjs/multer#diskstorage
 const storage = multer.diskStorage({
