@@ -1,6 +1,6 @@
 //create character event handler
+
 const createCharacterHandler = async (event) => {
-    console.log("################### Button Pressed");
     event.preventDefault();
 
     const name = document.querySelector('.character-name').value.trim();
@@ -10,17 +10,19 @@ const createCharacterHandler = async (event) => {
     const char_class = charClassResponse.options[charClassResponse.selectedIndex].text;
     const description = document.querySelector('.character-description').value.trim();
     // const charPhoto = document.querySelector('#character-photo');
+    const image = document.getElementById('project-image').files[0];
 
     if (name && race && char_class && description) {
         const response = await fetch('/api/character', {
             method: 'POST',
-            body: JSON.stringify({ name, race, char_class, description }),
+            body: JSON.stringify({ name, race, char_class, description, image }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
             // If successful, redirect the browser to the profile page
             alert('The gods have smiled upon your creation. Go forth, mortal.');
+           
             // document.location.replace('/character-selection');
         } else {
             alert('DISGRACE! You have angered the gods with your creation. Try again, mortal.');

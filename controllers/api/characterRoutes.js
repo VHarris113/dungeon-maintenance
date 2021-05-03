@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 const multer = require('multer');
-// const fileUpload = require('express-fileupload');
 
 //create a character
 router.post('/', async (req, res) => {
@@ -44,7 +43,7 @@ router.delete('/:character_id', async (req, res) => {
 
 
 // //find all characters by user id 
-router.get('/user/:user_id', withAuth, async (req, res) => {
+router.get('/user/:user_id', async (req, res) => {
     try {
         const charData = await Character.findAll({
             where: {
@@ -131,6 +130,37 @@ router.get('/:character_id', async (req, res) => {
 //         res.status(500).json(err);
 //     }
 // });
+
+// route for upload picture --- in server file now
+// router.post('/', (req, res) => {
+//     let sampleFile;
+//     let uploadPath;
+//     console.log(req)
+//     if (!req.files || Object.keys(req.files).length === 0) {
+//         console.log("not right")
+//         return res.status(400).send('No files uploaded.');
+//     }
+//     //name of input is sampleFile
+//     sampleFile = req.files.cat;
+
+//     uploadPath = __dirname + '/upload/' + sampleFile.name
+//     console.log(sampleFile);
+
+//     //use mv to put file on server
+
+//     sampleFile.mv(uploadPath, function (err) {
+//         if (err) {
+//             return res.status(500).send(err);
+//         }
+
+//         res.send('File uploaded to ' + uploadPath);
+
+//     });
+
+
+// });
+
+module.exports = router;
 
 
 // From Multer documentation: https://github.com/expressjs/multer#diskstorage

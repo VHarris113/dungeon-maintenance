@@ -47,7 +47,7 @@ router.get('/character-selection', withAuth, (req, res) => {
 router.get('/login', (req, res) => {
     try {
         if (req.session.logged_in) {
-            res.redirect('/api/character')
+            res.redirect('/character-selection')
 
             return;
         }

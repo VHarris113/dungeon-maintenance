@@ -14,36 +14,36 @@ Hewwo
 </div>
 <div class="box-wrap">
   {{#each characters as |char|}}
-    <div>
-      <div class="sectionbox">
-        <header id="header">
-          <h3>{{char.name}}</h3>
-        </header>
+  <div>
+    <div class="sectionbox">
+      <header id="header">
+        <h3>{{char.name}}</h3>
+      </header>
+      <div>
         <div>
-          <div>
-            <img src="/img/filler.png" alt="/img/filler.png">
-          </div>
-          <header class="header">
-            <h3>Description</h3>
-          </header>
-          <article class="info">
-            <h4 class="fitcont">{{char.description}}</h4>
-          </article>
-          <header class="header">
-            <h3>Race</h3>
-          </header>
-          <article class="race">
-            <h4>{{char.race}}</h4>
-          </article>
-          <header class="header">
-            <h3>Class</h3>
-          </header>
-          <article class="class">
-            <h4>{{char.char_class}}</h4>
-          </article>
+          <img class ="profile_image" src="/img/{{image}}" alt="profile image">
         </div>
+        <header class="header">
+          <h3>Description</h3>
+        </header>
+        <article class="info">
+          <h4 class="fitcont">{{char.description}}</h4>
+        </article>
+        <header class="header">
+          <h3>Race</h3>
+        </header>
+        <article class="race">
+          <h4>{{char.race}}</h4>
+        </article>
+        <header class="header">
+          <h3>Class</h3>
+        </header>
+        <article class="class">
+          <h4>{{char.char_class}}</h4>
+        </article>
       </div>
     </div>
+  </div>
   {{/each}}
 </div>
 <div id="content-container">
@@ -89,6 +89,9 @@ Hewwo
           <option value="Class">Wizard</option>
           <option value="Class">Warlock</option>
         </select>
+      </div>
+      <div>
+        <input type="file" id="project-img" name="project-img" />
       </div>
       <input type="submit" value="Create Character">
   </form>
