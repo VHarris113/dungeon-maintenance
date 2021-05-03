@@ -1,46 +1,46 @@
 const router = require('express').Router();
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+const multer = require("multer");
 const fileUpload = require('express-fileupload');
 
 //create a character
-router.post('/', async (req, res) => {
-    console.log("##########", req.body);
-    try {
-        const newCharacter = Character.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
+// router.post('/', async (req, res) => {
+//     console.log("##########", req.body);
+//     try {
+//         const newCharacter = Character.create({
+//             ...req.body,
+//             user_id: req.session.user_id,
+//         });
 
-        res.render('character-selection', { newCharacter })
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+//         res.render('character-selection', { newCharacter })
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
 
 
 //delete a character
-router.delete('/:character_id', async (req, res) => {
-    // console.log(req.params.character_id)
-    try {
-        const characterData = await Character.destroy({
-            where: {
-                character_id: req.params.character_id,
-                // user_id: req.session.user_id,
-            },
-        });
+// router.delete('/:character_id', async (req, res) => {
+//     // console.log(req.params.character_id)
+//     try {
+//         const characterData = await Character.destroy({
+//             where: {
+//                 character_id: req.params.character_id,
+//                 // user_id: req.session.user_id,
+//             },
+//         });
 
-        if (!characterData) {
-            res.status(404).json({ message: 'No character found with this id!' });
-            return;
-        }
+//         if (!characterData) {
+//             res.status(404).json({ message: 'No character found with this id!' });
+//             return;
+//         }
 
-        res.status(200).json(characterData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         res.status(200).json(characterData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 
 // //find all characters by user id 
@@ -160,5 +160,36 @@ router.get('/:character_id', async (req, res) => {
 
 
 // });
-
+// From Multer documentation: https://github.com/expressjs/multer#diskstorage
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, __dirname + "../../../public/img/");
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    },
+  });
+  const upload = multer({ storage: storage });
+  
+  // The upload.single() middleware is used when a single file is expected:
+  // https://github.com/expressjs/multer#singlefieldname
+  router.post("/", /* withAuth,*/ upload.single("image"), async (req, res) => {
+    // req.file is the 'image' file.
+    console.log("req.file", req.file);
+  
+    try {
+      const characters = await Character.create({
+        ...req.body,
+        // If no image was uploaded, undefined is returned, and the project is created with the default image.
+        image: req.file && req.file.originalname,
+        user_id: req.session.user_id,
+      });
+      console.log(characters);
+      res.status(200).json(characters);
+      // res.render("character-selection", { characters }); height auto width...
+    } catch (err) {
+      console.log(err);
+      res.status(400).json(err);
+    }
+  });
 module.exports = router;

@@ -93,3 +93,7 @@ box-shadow: 5px 10px 18px rgb(39, 39, 39);
     border-radius: .8rem;
     box-shadow: 5px 10px 18px rgb(39, 39, 39);
   }
+  #image {
+    width: 300px;
+    height:auto;
+  }
